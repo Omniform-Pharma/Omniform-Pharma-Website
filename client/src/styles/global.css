@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Global design tokens based on the provided Figma reference. */
+:root {
+  --brand-primary: #0a66c2;
+  --brand-primary-dark: #0856a8;
+  --brand-gray-900: #111827;
+  --brand-gray-700: #374151;
+  --brand-gray-600: #4b5563;
+  --brand-gray-100: #f3f4f6;
+}
+
+/* Global reset and typography baseline for consistent rendering. */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #ffffff;
+  color: var(--brand-gray-900);
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar to match the website's brand style. */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-primary-dark);
+}
