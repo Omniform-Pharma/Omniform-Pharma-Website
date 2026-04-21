@@ -18,15 +18,19 @@ function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white py-4 shadow-md" : "bg-white/95 py-6 backdrop-blur-sm"
+        isScrolled
+          ? "bg-white py-4 shadow-md"
+          : "bg-white/95 py-6 backdrop-blur-sm"
       }`}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#0A66C2] to-[#0856a8]">
-            <span className="text-xl font-bold text-white">Px</span>
+            <span className="text-xl font-bold text-white">OfP</span>
           </div>
-          <span className="text-2xl font-bold text-gray-900">PharmaCare</span>
+          <span className="text-2xl font-bold text-gray-900">
+            OmniformPharma
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -36,7 +40,9 @@ function Navbar() {
               to={item.path}
               className={({ isActive }) =>
                 `relative text-base font-medium transition-colors ${
-                  isActive ? "text-[#0A66C2]" : "text-gray-700 hover:text-[#0A66C2]"
+                  isActive
+                    ? "text-[#0A66C2]"
+                    : "text-gray-700 hover:text-[#0A66C2]"
                 }`
               }
             >
@@ -47,7 +53,11 @@ function Navbar() {
                     <motion.span
                       layoutId="active-nav-link"
                       className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#0A66C2]"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
                     />
                   )}
                 </>

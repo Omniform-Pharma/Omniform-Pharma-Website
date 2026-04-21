@@ -61,19 +61,18 @@ function ProductsPage() {
   //       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
   //       p.description.toLowerCase().includes(searchQuery.toLowerCase()))
   // );
-  
 
-const filteredProducts = useMemo(() => {
-  const query = searchQuery.trim().toLowerCase();
+  const filteredProducts = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
 
-  return products.filter(
-    (p) =>
-      (selectedCategory === "All" || p.category === selectedCategory) &&
-      (query === "" ||
-        p.name.toLowerCase().includes(query) ||
-        p.description.toLowerCase().includes(query))
-  );
-}, [products, selectedCategory, searchQuery]);
+    return products.filter(
+      (p) =>
+        (selectedCategory === "All" || p.category === selectedCategory) &&
+        (query === "" ||
+          p.name.toLowerCase().includes(query) ||
+          p.description.toLowerCase().includes(query))
+    );
+  }, [products, selectedCategory, searchQuery]);
 
   return (
     <>
@@ -107,7 +106,7 @@ const filteredProducts = useMemo(() => {
           </div>
         </div>
       </section>
-      <section className="sticky top-20 z-40 border-b bg-white py-8">
+      <section className="sticky top-20 z-40  bg-white py-8">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <div className="inline-flex flex-wrap justify-center gap-3">
