@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
+import {
+  FacebookFilled,
+  XOutlined,
+  InstagramOutlined,
+  LinkedinFilled,
+} from "@ant-design/icons";
 
 // Global footer with quick links, company details, and contact information.
 function Footer() {
@@ -10,34 +16,36 @@ function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#0A66C2] to-[#0856a8]">
-                <span className="text-xl font-bold text-white">Px</span>
+                <span className="text-xl font-bold text-white">OfP</span>
               </div>
-              <span className="text-xl font-bold text-white">PharmaCare</span>
+              <span className="text-xl font-bold text-white">
+                Omniform Pharma
+              </span>
             </div>
             <p className="text-sm leading-relaxed">
-              Leading the way in pharmaceutical innovation and healthcare solutions for a
-              healthier tomorrow.
+              Your trusted partner for third-party pharma manufacturing, private
+              labeling, and export solutions across India and global markets.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="transition-colors hover:text-[#0A66C2]" aria-label="Facebook">
-                <span className="inline-flex h-5 w-5 items-center justify-center text-xs font-semibold">
-                  Fb
-                </span>
+              <a href="#" aria-label="Facebook">
+                <FacebookFilled size={18} />
               </a>
-              <a href="#" className="transition-colors hover:text-[#0A66C2]" aria-label="Twitter">
-                <span className="inline-flex h-5 w-5 items-center justify-center text-xs font-semibold">
-                  X
-                </span>
+
+              <a href="#" aria-label="Twitter">
+                <XOutlined size={18} />
               </a>
-              <a href="#" className="transition-colors hover:text-[#0A66C2]" aria-label="LinkedIn">
-                <span className="inline-flex h-5 w-5 items-center justify-center text-xs font-semibold">
-                  In
-                </span>
+
+              <a
+                href="https://www.linkedin.com/in/omniform-pharmaceuticals-154356402"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <LinkedinFilled style={{ fontSize: "18px" }} />
               </a>
-              <a href="#" className="transition-colors hover:text-[#0A66C2]" aria-label="Instagram">
-                <span className="inline-flex h-5 w-5 items-center justify-center text-xs font-semibold">
-                  Ig
-                </span>
+
+              <a href="#" aria-label="Instagram">
+                <InstagramOutlined />
               </a>
             </div>
           </div>
@@ -51,17 +59,26 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="transition-colors hover:text-[#0A66C2]">
+                <Link
+                  to="/about"
+                  className="transition-colors hover:text-[#0A66C2]"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="transition-colors hover:text-[#0A66C2]">
+                <Link
+                  to="/products"
+                  className="transition-colors hover:text-[#0A66C2]"
+                >
                   Products
                 </Link>
               </li>
               <li>
-                <Link to="/manufacturing" className="transition-colors hover:text-[#0A66C2]">
+                <Link
+                  to="/manufacturing"
+                  className="transition-colors hover:text-[#0A66C2]"
+                >
                   Manufacturing
                 </Link>
               </li>
@@ -72,24 +89,28 @@ function Footer() {
             <h3 className="mb-4 font-semibold text-white">Explore</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/global-presence" className="transition-colors hover:text-[#0A66C2]">
+                <Link
+                  to="/global-presence"
+                  className="transition-colors hover:text-[#0A66C2]"
+                >
                   Global Presence
                 </Link>
               </li>
               <li>
-                <Link to="/news-events" className="transition-colors hover:text-[#0A66C2]">
+                <Link
+                  to="/news-events"
+                  className="transition-colors hover:text-[#0A66C2]"
+                >
                   News and Events
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="transition-colors hover:text-[#0A66C2]">
+                <Link
+                  to="/contact"
+                  className="transition-colors hover:text-[#0A66C2]"
+                >
                   Contact
                 </Link>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-[#0A66C2]">
-                  Careers
-                </a>
               </li>
             </ul>
           </div>
@@ -99,15 +120,25 @@ function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="mt-1 shrink-0 text-[#0A66C2]" />
-                <span className="text-sm">123 Medical Plaza, Healthcare District, NY 10001</span>
+                <span className="text-sm">Ahmedabad, Gujarat, India</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="shrink-0 text-[#0A66C2]" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <a
+                  href="tel:+919712112177"
+                  className="text-sm transition-colors hover:text-[#0A66C2]"
+                >
+                  +91 97121 12177
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="shrink-0 text-[#0A66C2]" />
-                <span className="text-sm">info@pharmacare.com</span>
+                <a
+                  href="mailto:inquiry@omniformpharma.com"
+                  className="text-sm transition-colors hover:text-[#0A66C2]"
+                >
+                  inquiry@omniformpharma.com
+                </a>
               </li>
             </ul>
           </div>
@@ -116,7 +147,9 @@ function Footer() {
 
       <div className="border-t border-gray-800">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-sm sm:px-6 md:flex-row lg:px-8">
-          <p>© {new Date().getFullYear()} PharmaCare. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Omniform Pharma. All rights reserved.
+          </p>
           <div className="flex gap-6">
             <a href="#" className="transition-colors hover:text-[#0A66C2]">
               Privacy Policy
