@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Beaker,
+  Package,
   Microscope,
   Shield,
   CheckCircle,
@@ -13,44 +15,83 @@ import ImageWithFallback from "../components/common/ImageWithFallback";
 // Manufacturing page with process flow and facilities overview.
 function ManufacturingPage() {
   const [activeStep, setActiveStep] = useState(0);
+  // const processSteps = [
+  //   {
+  //     icon: Beaker,
+  //     title: "Research",
+  //     description: "Innovative drug discovery",
+  //     details: "Exploring molecules and therapies",
+  //   },
+  //   {
+  //     icon: Microscope,
+  //     title: "Development",
+  //     description: "Clinical trials & compliance",
+  //     details: "Ensuring safety and efficacy",
+  //   },
+  //   {
+  //     icon: Shield,
+  //     title: "Testing",
+  //     description: "Quality assurance",
+  //     details: "Batch-level testing protocols",
+  //   },
+  //   {
+  //     icon: Factory,
+  //     title: "Production",
+  //     description: "Manufacturing at scale",
+  //     details: "Automated high-quality systems",
+  //   },
+  //   {
+  //     icon: CheckCircle,
+  //     title: "Quality Check",
+  //     description: "Final validation",
+  //     details: "Certified before release",
+  //   },
+  // ];
   const processSteps = [
     {
       icon: Beaker,
-      title: "Research",
-      description: "Innovative drug discovery",
-      details: "Exploring molecules and therapies",
-    },
-    {
-      icon: Microscope,
-      title: "Development",
-      description: "Clinical trials & compliance",
-      details: "Ensuring safety and efficacy",
-    },
-    {
-      icon: Shield,
-      title: "Testing",
-      description: "Quality assurance",
-      details: "Batch-level testing protocols",
+      title: "Formulation",
+      description: "Customized product development",
+      details: "Innovative and market-ready formulations",
     },
     {
       icon: Factory,
-      title: "Production",
-      description: "Manufacturing at scale",
-      details: "Automated high-quality systems",
+      title: "Manufacturing",
+      description: "High-quality production",
+      details: "WHO-GMP compliant manufacturing",
+    },
+    {
+      icon: Package,
+      title: "Packaging",
+      description: "All types of packaging",
+      details: "Blister, bottles, sachets, jars and more",
+    },
+    {
+      icon: Shield,
+      title: "Quality Control",
+      description: "Strict testing standards",
+      details: "Ensuring quality and compliance",
     },
     {
       icon: CheckCircle,
-      title: "Quality Check",
-      description: "Final validation",
-      details: "Certified before release",
+      title: "Dispatch / Export",
+      description: "PAN India & global delivery",
+      details: "Serving MENA & GCC countries",
     },
   ];
 
+  // const stats = [
+  //   { number: "67", label: "Manufacturing Units" },
+  //   { number: "1.5B+", label: "Units Per Year" },
+  //   { number: "99.9%", label: "Quality Rate" },
+  //   { number: "24/7", label: "Production Support" },
+  // ];
+
   const stats = [
-    { number: "67", label: "Manufacturing Units" },
-    { number: "1.5B+", label: "Units Per Year" },
-    { number: "99.9%", label: "Quality Rate" },
-    { number: "24/7", label: "Production Support" },
+    { number: "10+", label: "Years Experience" },
+    { number: "500+", label: "Products Manufactured" },
+    { number: "PAN India", label: "Market Reach" },
+    { number: "Global", label: "Export Markets" },
   ];
 
   const facilities = [
@@ -58,25 +99,27 @@ function ManufacturingPage() {
       name: "Main Manufacturing Hub",
       location: "New York, USA",
       capacity: "500M Units/Year",
-      image: "https://images.unsplash.com/photo-1757578097654-fdae0f7cf008",
+      image:
+        "https://images.unsplash.com/photo-1581092335258-34a0f1b4f3b1?auto=format&fit=crop&w=1600&q=80",
       certifications: ["FDA", "ISO 9001", "GMP"],
     },
     {
       name: "Asia Facility",
       location: "Mumbai, India",
       capacity: "400M Units/Year",
-      image: "https://images.unsplash.com/photo-1576670159805-622729b5b9eb",
+      image:
+        "https://images.unsplash.com/photo-1581092919535-7146d6b7b1a2?auto=format&fit=crop&w=1600&q=80",
       certifications: ["WHO", "ISO", "GMP"],
     },
   ];
 
   const certifications = [
-    { name: "FDA Approved", icon: CheckCircle },
-    { name: "ISO 9001", icon: CheckCircle },
-    { name: "GMP Certified", icon: CheckCircle },
-    { name: "WHO Certified", icon: CheckCircle },
-    { name: "CE Marked", icon: CheckCircle },
-    { name: "NABL Accredited", icon: CheckCircle },
+    { name: "WHO-GMP Certified", icon: CheckCircle },
+    { name: "ISO Certified", icon: CheckCircle },
+    { name: "Quality Assured", icon: CheckCircle },
+    { name: "Export Compliant", icon: CheckCircle },
+    { name: "Private Labeling", icon: CheckCircle },
+    { name: "Custom Packaging", icon: CheckCircle },
   ];
 
   const progress = (activeStep / (processSteps.length - 1)) * 100;
@@ -106,22 +149,33 @@ function ManufacturingPage() {
           >
             <div className="inline-block rounded-full bg-[#0A66C2]/10 px-4 py-2">
               <span className="font-medium text-[#0A66C2]">
-                Manufacturing Excellence
+                {/* Manufacturing Excellence */}One Stop Solution for Pharma
+                Manufacturing
               </span>
             </div>
 
             <h1 className="text-5xl font-bold leading-tight text-gray-900 md:text-6xl">
-              World-Class <span className="text-[#0A66C2]">Manufacturing</span>
+              Pharma Manufacturing{" "}
+              <span className="text-[#0A66C2]">Excellence</span>
             </h1>
 
             <p className="text-xl leading-relaxed text-gray-600">
-              State-of-the-art facilities combining cutting-edge technology with
-              stringent quality controls to deliver pharmaceutical excellence.
+              We provide end-to-end third-party pharma contract manufacturing,
+              private labeling, packaging, and export solutions with strict
+              quality standards.
             </p>
 
             {/* CTA */}
             <div>
-              <button className="inline-flex items-center gap-2 rounded-xl bg-[#0A66C2] px-8 py-4 font-semibold text-white shadow-lg transition-all hover:bg-[#0856a8] hover:shadow-xl">
+              <button
+                type="button"
+                onClick={() =>
+                  document
+                    .getElementById("facilities")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" })
+                }
+                className="inline-flex items-center gap-2 rounded-xl bg-[#0A66C2] px-8 py-4 font-semibold text-white shadow-lg transition-all hover:bg-[#0856a8] hover:shadow-xl"
+              >
                 Tour Our Facilities
                 <ArrowRight size={20} />
               </button>
@@ -152,7 +206,7 @@ function ManufacturingPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="mb-16 text-center"
           >
             <div className="mb-4 inline-block rounded-full bg-[#0A66C2]/10 px-4 py-2">
@@ -184,7 +238,7 @@ function ManufacturingPage() {
             </div>
 
             {/* STEPS */}
-            <div className="grid gap-8 md:grid-cols-5 relative">
+            <div className="relative grid gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
               {processSteps.map((step, index) => {
                 const Icon = step.icon;
 
@@ -193,12 +247,22 @@ function ManufacturingPage() {
                     key={step.title}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.25 }}
                     transition={{ delay: index * 0.15 }}
                     whileHover={{ y: -6 }}
+                    whileTap={{ scale: 0.98 }}
                     onHoverStart={() => setActiveStep(index)}
+                    onFocus={() => setActiveStep(index)}
                     onClick={() => setActiveStep(index)} // ✅ mobile fix
-                    className="relative cursor-pointer"
+                    className="relative cursor-pointer outline-none"
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setActiveStep(index);
+                      }
+                    }}
                   >
                     {/* CARD */}
                     <div
@@ -271,22 +335,22 @@ function ManufacturingPage() {
       </section>
 
       {/* Facilities Showcase */}
-      <section className="py-20 bg-white">
+      <section id="facilities" className="py-20 bg-white scroll-mt-24">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="text-center mb-12"
           >
             <div className="inline-block px-4 py-2 bg-[#0A66C2]/10 rounded-full mb-4">
               <span className="text-[#0A66C2] font-medium">Our Facilities</span>
             </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Global Manufacturing Network
+              Our Manufacturing Capabilities
             </h2>
             <p className="text-xl text-gray-600">
-              Strategic locations ensuring efficient global distribution
+              Advanced facilities for pharmaceutical manufacturing and packaging
             </p>
           </motion.div>
 
@@ -296,7 +360,7 @@ function ManufacturingPage() {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.25 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group"
@@ -352,7 +416,7 @@ function ManufacturingPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -372,7 +436,7 @@ function ManufacturingPage() {
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false, amount: 0.25 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
                   className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20 hover:bg-white/20 transition-all"
@@ -397,19 +461,22 @@ function ManufacturingPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="bg-white rounded-3xl p-12 md:p-16 text-center shadow-xl"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Want to Learn More About Our Manufacturing?
+              Looking for a Reliable Manufacturing Partner?
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Schedule a virtual tour of our facilities or speak with our
-              manufacturing team.
+              Connect with us for third-party manufacturing, packaging, and
+              export solutions.
             </p>
-            <button className="px-8 py-4 bg-[#0A66C2] text-white rounded-xl font-semibold hover:bg-[#0856a8] transition-all shadow-lg hover:shadow-xl">
-              Schedule a Facility Tour
-            </button>
+            <Link
+              to="/contact"
+              className="inline-flex px-8 py-4 bg-[#0A66C2] text-white rounded-xl font-semibold hover:bg-[#0856a8] transition-all shadow-lg hover:shadow-xl"
+            >
+              Contact Us Today
+            </Link>
           </motion.div>
         </div>
       </section>
