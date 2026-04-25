@@ -81,7 +81,7 @@ function NewsEventsPage() {
           </motion.div>
         </div>
       </section>
-      <section className="sticky top-18 z-40 bg-white/80 backdrop-blur py-8">
+      <section className="sticky top-20 z-40 bg-white/80 backdrop-blur py-8">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <div className="inline-flex flex-wrap justify-center gap-3">
@@ -295,7 +295,7 @@ function NewsEventsPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
