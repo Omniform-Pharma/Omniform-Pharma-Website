@@ -3,16 +3,26 @@ import { motion } from "framer-motion";
 import { Globe, MapPin, Users, Building2, Award } from "lucide-react";
 
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { Link } from "react-router-dom";
 
 // ✅ FIX: world-atlas TopoJSON uses NUMERIC ISO 3166-1 codes as geo.id
 // NOT alpha-3 strings like "USA", "GBR" etc. — that's why nothing was highlighting.
+// const marketData = {
+//   840: { label: "Headquarters", city: "New York, USA", employees: 500 }, // USA
+//   826: { label: "Regional Office", city: "London, UK", employees: 350 }, // UK
+//   356: { label: "Manufacturing Hub", city: "Mumbai, India", employees: 800 }, // India
+//   702: { label: "Asia HQ", city: "Singapore", employees: 400 }, // Singapore
+//   784: { label: "MENA Office", city: "Dubai, UAE", employees: 250 }, // UAE
+//   76: { label: "LATAM HQ", city: "São Paulo, Brazil", employees: 300 }, // Brazil
+// };
+
 const marketData = {
-  840: { label: "Headquarters", city: "New York, USA", employees: 500 }, // USA
-  826: { label: "Regional Office", city: "London, UK", employees: 350 }, // UK
-  356: { label: "Manufacturing Hub", city: "Mumbai, India", employees: 800 }, // India
-  702: { label: "Asia HQ", city: "Singapore", employees: 400 }, // Singapore
-  784: { label: "MENA Office", city: "Dubai, UAE", employees: 250 }, // UAE
-  76: { label: "LATAM HQ", city: "São Paulo, Brazil", employees: 300 }, // Brazil
+  356: { label: "India Market", city: "India", employees: "PAN India" },
+  784: { label: "UAE Market", city: "Dubai, UAE", employees: "GCC" },
+  682: { label: "Saudi Arabia", city: "Saudi Arabia", employees: "MENA" },
+  512: { label: "Oman", city: "Oman", employees: "Export" },
+  634: { label: "Qatar", city: "Qatar", employees: "Export" },
+  414: { label: "Kuwait", city: "Kuwait", employees: "Export" },
 };
 
 function GlobalPresencePage() {
@@ -71,11 +81,17 @@ function GlobalPresencePage() {
     },
   ];
 
+  // const globalStats = [
+  //   { number: "100+", label: "Countries Worldwide", icon: Globe },
+  //   { number: "1,400+", label: "Global Partners", icon: Users },
+  //   { number: "67", label: "Manufacturing Units", icon: Building2 },
+  //   { number: "50+", label: "Years of Excellence", icon: Award },
+  // ];
   const globalStats = [
-    { number: "100+", label: "Countries Worldwide", icon: Globe },
-    { number: "1,400+", label: "Global Partners", icon: Users },
-    { number: "67", label: "Manufacturing Units", icon: Building2 },
-    { number: "50+", label: "Years of Excellence", icon: Award },
+    { number: "PAN India", label: "Domestic Reach", icon: Globe },
+    { number: "MENA", label: "Export Markets", icon: Users },
+    { number: "GCC", label: "Countries Served", icon: Building2 },
+    { number: "10+", label: "Years Experience", icon: Award },
   ];
 
   const keyMarkets = [
@@ -117,9 +133,8 @@ function GlobalPresencePage() {
               Our <span className="text-[#0A66C2]">Global Presence</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Serving communities across six continents with innovative
-              pharmaceutical solutions and unwavering commitment to global
-              health.
+              Serving PAN India and international markets with reliable
+              pharmaceutical manufacturing and export solutions.
             </p>
           </motion.div>
         </div>
@@ -136,7 +151,7 @@ function GlobalPresencePage() {
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false, amount: 0.25 }}
                   transition={{ delay: index * 0.1 }}
                   className="text-center"
                 >
@@ -160,7 +175,7 @@ function GlobalPresencePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -174,7 +189,7 @@ function GlobalPresencePage() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="relative bg-white rounded-2xl shadow-xl p-8"
           >
             <ComposableMap
@@ -232,7 +247,8 @@ function GlobalPresencePage() {
                 </p>
                 <p className="font-medium">{tooltip.city}</p>
                 <p className="text-gray-400 text-xs mt-1">
-                  👥 {tooltip.employees} employees
+                  {/* 👥 {tooltip.employees} employees */}
+                  📦 Export Market
                 </p>
               </motion.div>
             )}
@@ -258,7 +274,7 @@ function GlobalPresencePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="mb-16 text-center"
           >
             <div className="mb-4 inline-block rounded-full bg-[#0A66C2]/10 px-4 py-2">
@@ -275,7 +291,7 @@ function GlobalPresencePage() {
                 key={region.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.25 }}
                 transition={{ delay: index * 0.1 }}
                 onHoverStart={() => setHoveredRegion(region.name)}
                 onHoverEnd={() => setHoveredRegion(null)}
@@ -346,7 +362,7 @@ function GlobalPresencePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="mb-12 text-center"
           >
             <h2 className="mb-4 text-4xl font-bold text-gray-900">
@@ -363,7 +379,7 @@ function GlobalPresencePage() {
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.25 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
                 className="rounded-xl bg-white p-6 shadow-md transition-all hover:shadow-xl"
@@ -396,18 +412,21 @@ function GlobalPresencePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
           >
             <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
               Partner with Us Globally
             </h2>
             <p className="mb-8 text-xl text-blue-100">
-              Interested in distribution or partnership opportunities? Get in
-              touch with our regional teams.
+              Interested in export services or global distribution partnerships?
+              Connect with our team today.
             </p>
-            <button className="rounded-xl bg-white px-8 py-4 font-semibold text-[#0A66C2] shadow-xl transition-all hover:bg-gray-100">
-              Contact Regional Office
-            </button>
+            <Link
+              to="/contact"
+              className="inline-flex rounded-xl bg-white px-8 py-4 font-semibold text-[#0A66C2] shadow-xl transition-all hover:bg-gray-100"
+            >
+              Contact Us Today
+            </Link>
           </motion.div>
         </div>
       </section>
