@@ -4,30 +4,55 @@ import ImageWithFallback from "../components/common/ImageWithFallback";
 
 // About page sections based on the provided design.
 function AboutPage() {
+  // const values = [
+  //   {
+  //     icon: Lightbulb,
+  //     title: "Innovation",
+  //     description:
+  //       "Pioneering new treatments and therapeutic approaches through continuous research and development.",
+  //   },
+  //   {
+  //     icon: Award,
+  //     title: "Excellence",
+  //     description:
+  //       "Maintaining the highest standards in quality, safety, and efficacy across all our products.",
+  //   },
+  //   {
+  //     icon: Users,
+  //     title: "Patient Focus",
+  //     description:
+  //       "Putting patient needs at the center of everything we do, from research to delivery.",
+  //   },
+  //   {
+  //     icon: Globe,
+  //     title: "Global Impact",
+  //     description:
+  //       "Making life-saving medications accessible to communities worldwide.",
+  //   },
+  // ];
   const values = [
     {
       icon: Lightbulb,
       title: "Innovation",
       description:
-        "Pioneering new treatments and therapeutic approaches through continuous research and development.",
+        "Developing innovative formulations and customized pharmaceutical solutions.",
     },
     {
       icon: Award,
-      title: "Excellence",
-      description:
-        "Maintaining the highest standards in quality, safety, and efficacy across all our products.",
+      title: "Quality Assurance",
+      description: "Ensuring strict compliance with WHO-GMP and ISO standards.",
     },
     {
       icon: Users,
-      title: "Patient Focus",
+      title: "Customer Commitment",
       description:
-        "Putting patient needs at the center of everything we do, from research to delivery.",
+        "Delivering tailored solutions to pharmaceutical marketing companies.",
     },
     {
       icon: Globe,
-      title: "Global Impact",
+      title: "Global Reach",
       description:
-        "Making life-saving medications accessible to communities worldwide.",
+        "Serving PAN India and international markets including MENA & GCC countries.",
     },
   ];
 
@@ -35,7 +60,7 @@ function AboutPage() {
     {
       name: "Dr. Sarah Johnson",
       role: "Chief Executive Officer",
-      bio: "Leading PharmaCare towards a future where healthcare is accessible to all.",
+      bio: "Leading Omniform Pharma towards a future where healthcare is accessible to all.",
       image:
         "https://images.unsplash.com/photo-1739298061768-41a8a7d8b38f?auto=format&fit=crop&w=1080&q=80",
     },
@@ -60,16 +85,18 @@ function AboutPage() {
       <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-20">
         <div className="mx-auto w-full max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mb-4 inline-block rounded-full bg-[#0A66C2]/10 px-4 py-2">
-            <span className="font-medium text-[#0A66C2]">About PharmaCare</span>
+            <span className="font-medium text-[#0A66C2]">
+              About Omniform Pharma
+            </span>
           </div>
           <h1 className="mb-6 text-5xl font-bold text-gray-900 md:text-6xl">
-            Advancing Healthcare for a{" "}
-            <span className="text-[#0A66C2]">Healthier World</span>
+            Trusted Partner in{" "}
+            <span className="text-[#0A66C2]">Pharma Manufacturing</span>
           </h1>
           <p className="mx-auto max-w-4xl text-xl leading-relaxed text-gray-600">
-            Since 1970, PharmaCare has been dedicated to discovering,
-            developing, and delivering innovative pharmaceutical solutions that
-            transform lives and improve global health outcomes.
+            With 10+ years of industry experience, Omniform Pharma provides
+            premium third-party contract manufacturing, private labeling, and
+            export solutions across India and global markets.
           </p>
         </div>
       </section>
@@ -78,21 +105,22 @@ function AboutPage() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="rounded-2xl bg-gradient-to-br from-[#0A66C2] to-[#0856a8] p-10 text-white"
           >
             <Target size={48} className="mb-6" />
             <h2 className="mb-4 text-3xl font-bold">Our Mission</h2>
             <p className="text-lg leading-relaxed text-blue-50">
-              To improve and extend lives by discovering, developing, and
-              providing innovative pharmaceutical products that address
-              significant unmet medical needs around the world.
+              Our mission at Omniform Pharma is to advance healthcare by
+              relentlessly pursuing innovation, delivering high-quality
+              pharmaceuticals, and improving access to life-saving treatments
+              for all.
             </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="rounded-2xl border-2 border-gray-100 bg-gradient-to-br from-gray-50 to-white p-10"
           >
             <Eye size={48} className="mb-6 text-[#0A66C2]" />
@@ -100,9 +128,9 @@ function AboutPage() {
               Our Vision
             </h2>
             <p className="text-lg leading-relaxed text-gray-600">
-              To be the world's most trusted pharmaceutical company, recognized
-              for our commitment to innovation, quality, and making healthcare
-              accessible to all who need it.
+              To become a globally recognized pharmaceutical manufacturing
+              partner, specializing in innovative formulations and delivering
+              high-quality, accessible healthcare solutions.
             </p>
           </motion.div>
         </div>
@@ -113,7 +141,7 @@ function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="mb-12 text-center"
           >
             <div className="mb-4 inline-block rounded-full bg-[#0A66C2]/10 px-4 py-2">
@@ -136,7 +164,7 @@ function AboutPage() {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.25 }}
                 transition={{ delay: index * 0.1 }}
                 className="rounded-xl bg-white p-8 shadow-md transition-all hover:shadow-xl"
               >
@@ -161,7 +189,7 @@ function AboutPage() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.25 }}
               className="space-y-6"
             >
               <div className="inline-block rounded-full bg-[#0A66C2]/10 px-4 py-2">
@@ -169,14 +197,14 @@ function AboutPage() {
               </div>
 
               <h2 className="text-4xl font-bold text-gray-900">
-                Over 50 Years of Innovation
+                10+ Years of Manufacturing Excellence
               </h2>
 
               <p className="text-lg leading-relaxed text-gray-600">
-                Founded in 1970, PharmaCare began with a simple yet profound
-                mission: to create medications that truly make a difference in
-                people's lives. What started as a small research facility has
-                grown into a global pharmaceutical leader.
+                Founded in 1970, Omniform Pharma began with a simple yet
+                profound mission: to create medications that truly make a
+                difference in people's lives. What started as a small research
+                facility has grown into a global pharmaceutical leader.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-600">
@@ -189,7 +217,7 @@ function AboutPage() {
               {/* STATS */}
               <div className="grid grid-cols-3 gap-6 pt-4">
                 <div>
-                  <div className="text-3xl font-bold text-[#0A66C2]">50+</div>
+                  <div className="text-3xl font-bold text-[#0A66C2]">10+</div>
                   <div className="text-sm text-gray-600">Years</div>
                 </div>
                 <div>
@@ -197,7 +225,9 @@ function AboutPage() {
                   <div className="text-sm text-gray-600">Products</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-[#0A66C2]">100+</div>
+                  <div className="text-3xl font-bold text-[#0A66C2]">
+                    MENA & GCC
+                  </div>
                   <div className="text-sm text-gray-600">Countries</div>
                 </div>
               </div>
@@ -208,7 +238,7 @@ function AboutPage() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.25 }}
             >
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1576670159805-622729b5b9eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGxhYm9yYXRvcnklMjByZXNlYXJjaHxlbnwxfHx8fDE3NzQ0MTI1MDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
@@ -226,7 +256,7 @@ function AboutPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="mb-12 text-center"
           >
             <div className="mb-4 inline-block rounded-full bg-[#0A66C2]/10 px-4 py-2">
@@ -246,7 +276,7 @@ function AboutPage() {
             {
               year: "1970",
               event:
-                "PharmaCare founded with a vision to revolutionize healthcare",
+                "Omniform Pharma founded with a vision to revolutionize healthcare",
             },
             {
               year: "1985",
@@ -267,7 +297,7 @@ function AboutPage() {
               key={index}
               initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.25 }}
               transition={{ delay: index * 0.1 }}
               className="relative border-l-2 border-[#0A66C2]/20 pl-8 pb-12 last:pb-0"
             >
@@ -290,7 +320,7 @@ function AboutPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.25 }}
             className="mb-12 text-center"
           >
             <div className="mb-4 inline-block rounded-full bg-[#0A66C2]/10 px-4 py-2">
@@ -313,7 +343,7 @@ function AboutPage() {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.25 }}
                 transition={{ delay: index * 0.1 }}
                 className="group overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-xl"
               >
@@ -343,17 +373,23 @@ function AboutPage() {
       <section className="bg-gradient-to-r from-[#0A66C2] to-[#0856a8] py-16">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {[
+            {/* [
               { number: "5000+", label: "Employees Worldwide" },
               { number: "500+", label: "Products & Solutions" },
               { number: "100+", label: "Countries Served" },
               { number: "50+", label: "Years of Excellence" },
+            ] */}
+            {[
+              { number: "10+", label: "Years Experience" },
+              { number: "500+", label: "Products Manufactured" },
+              { number: "PAN India", label: "Market Reach" },
+              { number: "Global", label: "Export Services" },
             ].map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.25 }}
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
