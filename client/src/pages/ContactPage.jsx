@@ -26,9 +26,9 @@ function ContactPage() {
       await api.post("/api/contact", {
         name: formData.name,
         email: formData.email,
-        message: `${formData.subject ? `[${formData.subject}] ` : ""}${
-          formData.message
-        }`,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
       });
       setSubmitStatus("success");
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
@@ -53,12 +53,12 @@ function ContactPage() {
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Let's Start a <span className="text-[#0A66C2]">Conversation</span>
+              Get in Touch <span className="text-[#0A66C2]">with Us</span>
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              Have questions about our products or services? Our team is here to
-              help you find the solutions you need.
+              Connect with us for third-party manufacturing, private labeling,
+              product development, and export solutions.
             </p>
           </motion.div>
         </div>
@@ -71,10 +71,11 @@ function ContactPage() {
             className="rounded-2xl bg-white p-8 shadow-xl md:p-10"
           >
             <h2 className="mb-2 text-3xl font-bold text-gray-900">
-              Send Us a Message
+              Enquire Now
             </h2>
             <p className="mb-8 text-gray-600">
-              Fill out the form below and we will get back to you.
+              Tell us about your requirements and our team will contact you
+              shortly.
             </p>
             {submitStatus === "success" && (
               <div className="mb-6 rounded-lg border border-green-200 bg-green-50 p-4 text-green-800">
@@ -125,7 +126,7 @@ function ContactPage() {
                 rows={6}
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Tell us more about your inquiry..."
+                placeholder="Tell us about your manufacturing or product requirements..."
                 className="w-full resize-none rounded-lg border border-gray-300 px-4 py-3 outline-none transition-all focus:border-[#0A66C2] focus:ring-2 focus:ring-[#0A66C2]/20"
               />
               <button
@@ -156,16 +157,14 @@ function ContactPage() {
                   Visit Us
                 </h3>
               </div>
-              <p className="text-gray-600">
-                123 Medical Plaza, Healthcare District, New York, NY 10001
-              </p>
+              <p className="text-gray-600">Ahmedabad, Gujarat, India</p>
             </div>
             <div className="rounded-2xl bg-white p-8 shadow-lg">
               <div className="mb-4 flex items-center gap-3">
                 <Phone className="text-[#0A66C2]" />
                 <h3 className="text-xl font-semibold text-gray-900">Call Us</h3>
               </div>
-              <p className="text-gray-600">+1 (555) 123-4567</p>
+              <p className="text-gray-600">+91 97121 12177</p>
             </div>
             <div className="rounded-2xl bg-white p-8 shadow-lg">
               <div className="mb-4 flex items-center gap-3">
@@ -174,7 +173,7 @@ function ContactPage() {
                   Email Us
                 </h3>
               </div>
-              <p className="text-gray-600">info@pharmacare.com</p>
+              <p className="text-gray-600">inquiry@omniformpharma.com</p>
             </div>
             <div className="rounded-2xl bg-white p-8 shadow-lg">
               <div className="mb-4 flex items-center gap-3">
@@ -183,7 +182,7 @@ function ContactPage() {
                   Business Hours
                 </h3>
               </div>
-              <p className="text-gray-600">Mon-Fri: 9AM-6PM EST</p>
+              <p className="text-gray-600">Mon-Sat: 9:00 AM - 6:00 PM IST</p>
             </div>
             <div className="rounded-2xl bg-white p-8 shadow-lg">
               <div className="mb-4 flex items-center gap-3">
@@ -192,9 +191,7 @@ function ContactPage() {
                   Global Offices
                 </h3>
               </div>
-              <p className="text-gray-600">
-                New York • London • Singapore • Tokyo
-              </p>
+              <p className="text-gray-600">India • MENA • GCC Countries</p>
             </div>
           </motion.div>
         </div>
