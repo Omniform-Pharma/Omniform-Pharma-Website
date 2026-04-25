@@ -6,7 +6,15 @@ const ERROR_IMG_SRC =
 // Reusable image component that shows a visual fallback if image loading fails.
 function ImageWithFallback(props) {
   const [didError, setDidError] = useState(false);
-  const { src, alt, style, className, loading = "lazy", ...rest } = props;
+  const {
+    src,
+    alt,
+    style,
+    className,
+    loading = "lazy",
+    decoding = "async",
+    ...rest
+  } = props;
 
   if (didError) {
     return (
@@ -25,6 +33,7 @@ function ImageWithFallback(props) {
       className={className}
       style={style}
       loading={loading}
+      decoding={decoding}
       {...rest}
       onError={() => setDidError(true)}
     />

@@ -24,7 +24,25 @@ body {
     sans-serif;
   background-color: #ffffff;
   color: var(--brand-gray-900);
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+}
+
+/* Custom scrollbar to match the website's brand style. */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-primary-dark);
 }
 
 * {
