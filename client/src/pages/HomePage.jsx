@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import ImageWithFallback from "../components/common/ImageWithFallback";
+import Seo from "../components/common/Seo";
 
 // Home page with full section structure from the provided design.
 function HomePage() {
@@ -169,6 +170,10 @@ function HomePage() {
 
   return (
     <>
+      <Seo
+        title="Home"
+        description="Premium third-party pharma contract manufacturing, private labeling, product development, and export solutions across India and global markets."
+      />
       <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A66C2]/5 to-transparent" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">

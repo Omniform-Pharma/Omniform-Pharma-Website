@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 import ImageWithFallback from "../components/common/ImageWithFallback";
+import Seo from "../components/common/Seo";
 
 const CATEGORIES = [
   { name: "All", icon: Package },
@@ -239,6 +240,10 @@ function ProductsPage() {
 
   return (
     <>
+      <Seo
+        title="Products"
+        description="Explore Omniform Pharma's product range across tablets, capsules, syrups, sachets, ayurvedic and specialty products."
+      />
       <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-20">
         <div className="mx-auto w-full max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mb-4 inline-block rounded-full bg-[#0A66C2]/10 px-4 py-2">
@@ -295,7 +300,7 @@ function ProductsPage() {
                     {/* ✅ Animated active pill */}
                     {selectedCategory === category.name && (
                       <motion.div
-                        layoutId="activeCategory"
+                        layoutId="products-activeCategory"
                         className="absolute inset-0 rounded-full bg-[#0A66C2] -z-10"
                         transition={{
                           type: "spring",

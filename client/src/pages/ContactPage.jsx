@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Clock, Building } from "lucide-react";
 import api from "../utils/api";
+import Seo from "../components/common/Seo";
 
 // Contact page with form UI and backend-ready submission flow.
 function ContactPage() {
@@ -41,6 +42,10 @@ function ContactPage() {
 
   return (
     <>
+      <Seo
+        title="Contact"
+        description="Contact Omniform Pharma for third-party manufacturing, private labeling, product development, and export solutions."
+      />
       <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="container mx-auto px-6">
           <motion.div

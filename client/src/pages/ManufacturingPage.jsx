@@ -11,6 +11,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import ImageWithFallback from "../components/common/ImageWithFallback";
+import Seo from "../components/common/Seo";
 
 // Manufacturing page with process flow and facilities overview.
 function ManufacturingPage() {
@@ -126,6 +127,10 @@ function ManufacturingPage() {
 
   return (
     <>
+      <Seo
+        title="Manufacturing"
+        description="End-to-end pharma manufacturing, packaging, quality control, private labeling, and export support with WHO-GMP compliant processes."
+      />
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-50 py-20">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">

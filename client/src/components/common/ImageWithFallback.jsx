@@ -6,6 +6,7 @@ const ERROR_IMG_SRC =
 // Reusable image component that shows a visual fallback if image loading fails.
 function ImageWithFallback(props) {
   const [didError, setDidError] = useState(false);
+  const [didLoad, setDidLoad] = useState(false);
   const {
     src,
     alt,
@@ -13,6 +14,7 @@ function ImageWithFallback(props) {
     className,
     loading = "lazy",
     decoding = "async",
+    skeletonClassName = "bg-gray-100",
     ...rest
   } = props;
 
@@ -27,16 +29,24 @@ function ImageWithFallback(props) {
   }
 
   return (
-    <img
-      src={src}
-      alt={alt}
-      className={className}
-      style={style}
-      loading={loading}
-      decoding={decoding}
-      {...rest}
-      onError={() => setDidError(true)}
-    />
+    <span className="relative inline-block" style={style}>
+      {!didLoad && (
+        <span
+          aria-hidden="true"
+          className={`absolute inset-0 animate-pulse ${skeletonClassName}`}
+        />
+      )}
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        loading={loading}
+        decoding={decoding}
+        {...rest}
+        onLoad={() => setDidLoad(true)}
+        onError={() => setDidError(true)}
+      />
+    </span>
   );
 }
 

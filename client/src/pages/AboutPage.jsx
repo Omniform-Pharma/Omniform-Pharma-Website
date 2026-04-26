@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Target, Eye, Users, Lightbulb, Award, Globe } from "lucide-react";
 import ImageWithFallback from "../components/common/ImageWithFallback";
+import Seo from "../components/common/Seo";
 
 // About page sections based on the provided design.
 function AboutPage() {
@@ -82,6 +83,10 @@ function AboutPage() {
 
   return (
     <>
+      <Seo
+        title="About"
+        description="Learn about Omniform Pharma — our mission, values, manufacturing excellence, and global reach."
+      />
       <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-20">
         <div className="mx-auto w-full max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mb-4 inline-block rounded-full bg-[#0A66C2]/10 px-4 py-2">

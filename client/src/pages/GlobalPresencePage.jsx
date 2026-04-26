@@ -4,6 +4,7 @@ import { Globe, MapPin, Users, Building2, Award } from "lucide-react";
 
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { Link } from "react-router-dom";
+import Seo from "../components/common/Seo";
 
 // ✅ FIX: world-atlas TopoJSON uses NUMERIC ISO 3166-1 codes as geo.id
 // NOT alpha-3 strings like "USA", "GBR" etc. — that's why nothing was highlighting.
@@ -118,6 +119,10 @@ function GlobalPresencePage() {
 
   return (
     <>
+      <Seo
+        title="Global Presence"
+        description="Omniform Pharma serves PAN India and export markets including MENA and GCC countries with reliable manufacturing and distribution support."
+      />
       {/* HERO */}
       <section className="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-20">
         <div className="mx-auto w-full max-w-4xl px-4 text-center sm:px-6 lg:px-8">

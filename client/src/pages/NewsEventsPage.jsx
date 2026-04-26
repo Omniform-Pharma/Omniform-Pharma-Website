@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import ImageWithFallback from "../components/common/ImageWithFallback";
+import Seo from "../components/common/Seo";
 
 // News and events listing with category filters and featured card.
 function NewsEventsPage() {
@@ -56,6 +57,10 @@ function NewsEventsPage() {
 
   return (
     <>
+      <Seo
+        title="News & Events"
+        description="Stay updated with Omniform Pharma's latest news, research updates, and events."
+      />
       <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="mx-auto w-full max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <motion.div
@@ -102,7 +107,7 @@ function NewsEventsPage() {
                   {/* ACTIVE PILL ANIMATION */}
                   {selectedCategory === category && (
                     <motion.div
-                      layoutId="activeCategory"
+                      layoutId="news-activeCategory"
                       className="absolute inset-0 bg-[#0A66C2] rounded-full -z-10"
                       transition={{
                         type: "spring",

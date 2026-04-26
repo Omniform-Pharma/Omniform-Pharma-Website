@@ -27,11 +27,21 @@ function Footer() {
               labeling, and export solutions across India and global markets.
             </p>
             <div className="flex gap-4">
-              <a href="#" aria-label="Facebook">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
                 <FacebookFilled size={18} />
               </a>
 
-              <a href="#" aria-label="Twitter">
+              <a
+                href="https://x.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (Twitter)"
+              >
                 <XOutlined size={18} />
               </a>
 
@@ -44,7 +54,12 @@ function Footer() {
                 <LinkedinFilled style={{ fontSize: "18px" }} />
               </a>
 
-              <a href="#" aria-label="Instagram">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
                 <InstagramOutlined />
               </a>
             </div>
@@ -151,15 +166,24 @@ function Footer() {
             © {new Date().getFullYear()} Omniform Pharma. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="transition-colors hover:text-[#0A66C2]">
+            <Link
+              to="/privacy-policy"
+              className="transition-colors hover:text-[#0A66C2]"
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="transition-colors hover:text-[#0A66C2]">
+            </Link>
+            <Link
+              to="/terms"
+              className="transition-colors hover:text-[#0A66C2]"
+            >
               Terms of Service
-            </a>
-            <a href="#" className="transition-colors hover:text-[#0A66C2]">
+            </Link>
+            <Link
+              to="/cookie-policy"
+              className="transition-colors hover:text-[#0A66C2]"
+            >
               Cookie Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>
