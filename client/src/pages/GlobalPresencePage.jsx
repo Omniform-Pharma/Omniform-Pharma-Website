@@ -6,24 +6,47 @@ import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { Link } from "react-router-dom";
 import Seo from "../components/common/Seo";
 
-// ✅ FIX: world-atlas TopoJSON uses NUMERIC ISO 3166-1 codes as geo.id
-// NOT alpha-3 strings like "USA", "GBR" etc. — that's why nothing was highlighting.
 // const marketData = {
-//   840: { label: "Headquarters", city: "New York, USA", employees: 500 }, // USA
-//   826: { label: "Regional Office", city: "London, UK", employees: 350 }, // UK
-//   356: { label: "Manufacturing Hub", city: "Mumbai, India", employees: 800 }, // India
-//   702: { label: "Asia HQ", city: "Singapore", employees: 400 }, // Singapore
-//   784: { label: "MENA Office", city: "Dubai, UAE", employees: 250 }, // UAE
-//   76: { label: "LATAM HQ", city: "São Paulo, Brazil", employees: 300 }, // Brazil
+//   356: { label: "India Market", city: "India", employees: "PAN India" },
+//   784: { label: "UAE Market", city: "Dubai, UAE", employees: "GCC" },
+//   682: { label: "Saudi Arabia", city: "Saudi Arabia", employees: "MENA" },
+//   512: { label: "Oman", city: "Oman", employees: "Export" },
+//   634: { label: "Qatar", city: "Qatar", employees: "Export" },
+//   414: { label: "Kuwait", city: "Kuwait", employees: "Export" },
 // };
 
-const marketData = {
-  356: { label: "India Market", city: "India", employees: "PAN India" },
-  784: { label: "UAE Market", city: "Dubai, UAE", employees: "GCC" },
-  682: { label: "Saudi Arabia", city: "Saudi Arabia", employees: "MENA" },
-  512: { label: "Oman", city: "Oman", employees: "Export" },
-  634: { label: "Qatar", city: "Qatar", employees: "Export" },
-  414: { label: "Kuwait", city: "Kuwait", employees: "Export" },
+const regionsMap = {
+  india: ["356"],
+
+  gcc: ["784", "682", "512", "634", "414", "48"], // UAE, Saudi, Oman, Qatar, Kuwait, Bahrain
+
+  mena: ["818", "504", "12", "788", "434", "729", "728", "760", "400", "422"],
+
+  asia: ["156", "392", "410", "764", "704", "360", "458", "608"],
+};
+
+const getRegionColor = (geoId) => {
+  if (regionsMap.india.includes(geoId)) return "#0A66C2"; // India
+  if (regionsMap.gcc.includes(geoId)) return "#08306b"; // GCC (darkest)
+  if (regionsMap.mena.includes(geoId)) return "#2171b5"; // MENA
+  if (regionsMap.asia.includes(geoId)) return "#6baed6"; // Asia
+  return "#E5E7EB"; // Others
+};
+
+const getRegionInfo = (geoId) => {
+  if (regionsMap.india.includes(geoId)) {
+    return { name: "India", type: "Domestic Market" };
+  }
+  if (regionsMap.gcc.includes(geoId)) {
+    return { name: "GCC", type: "Export Market" };
+  }
+  if (regionsMap.mena.includes(geoId)) {
+    return { name: "MENA", type: "Export Market" };
+  }
+  if (regionsMap.asia.includes(geoId)) {
+    return { name: "Asia", type: "International Market" };
+  }
+  return null;
 };
 
 function GlobalPresencePage() {
@@ -82,12 +105,6 @@ function GlobalPresencePage() {
     },
   ];
 
-  // const globalStats = [
-  //   { number: "100+", label: "Countries Worldwide", icon: Globe },
-  //   { number: "1,400+", label: "Global Partners", icon: Users },
-  //   { number: "67", label: "Manufacturing Units", icon: Building2 },
-  //   { number: "50+", label: "Years of Excellence", icon: Award },
-  // ];
   const globalStats = [
     { number: "PAN India", label: "Domestic Reach", icon: Globe },
     { number: "MENA", label: "Export Markets", icon: Users },
@@ -197,16 +214,16 @@ function GlobalPresencePage() {
             viewport={{ once: false, amount: 0.25 }}
             className="relative bg-white rounded-2xl shadow-xl p-8"
           >
-            <ComposableMap
+            {/* <ComposableMap
               projectionConfig={{ scale: 150 }}
               className="w-full h-[500px]"
-            >
-              <Geographies geography={geoUrl}>
+            > */}
+            {/* <Geographies geography={geoUrl}>
                 {({ geographies }) =>
                   geographies.map((geo) => {
                     // geo.id is a numeric string e.g. "840" for USA
-                    const info = marketData[String(geo.id)];
-                    const isActive = !!info;
+                    // const info = marketData[String(geo.id)];
+                    // const isActive = !!info;
 
                     return (
                       <Geography
@@ -235,11 +252,59 @@ function GlobalPresencePage() {
                     );
                   })
                 }
+              </Geographies> */}
+
+            {/* </ComposableMap> */}
+
+            <ComposableMap
+              projectionConfig={{ scale: 150 }}
+              className="w-full h-[500px]"
+            >
+              <Geographies geography={geoUrl}>
+                {({ geographies }) =>
+                  geographies.map((geo) => {
+                    const geoId = String(geo.id);
+                    const info = getRegionInfo(geoId);
+
+                    return (
+                      <Geography
+                        key={geo.rsmKey}
+                        geography={geo}
+                        onMouseEnter={() => {
+                          if (info) {
+                            setTooltip({
+                              country: geo.properties.name,
+                              region: info.name,
+                              type: info.type,
+                            });
+                          }
+                        }}
+                        onMouseLeave={() => setTooltip(null)}
+                        style={{
+                          default: {
+                            fill: getRegionColor(geoId),
+                            outline: "none",
+                          },
+                          hover: {
+                            fill: getRegionColor(geoId),
+                            outline: "none",
+                            cursor: info ? "pointer" : "default",
+                            opacity: 0.8,
+                          },
+                          pressed: {
+                            fill: getRegionColor(geoId),
+                            outline: "none",
+                          },
+                        }}
+                      />
+                    );
+                  })
+                }
               </Geographies>
             </ComposableMap>
 
             {/* RICH TOOLTIP */}
-            {tooltip && (
+            {/* {tooltip && (
               <motion.div
                 key={tooltip.city}
                 initial={{ opacity: 0, y: 8 }}
@@ -252,21 +317,55 @@ function GlobalPresencePage() {
                 </p>
                 <p className="font-medium">{tooltip.city}</p>
                 <p className="text-gray-400 text-xs mt-1">
-                  {/* 👥 {tooltip.employees} employees */}
+                 
                   📦 Export Market
                 </p>
               </motion.div>
-            )}
+            )} */}
+            {/* 👥 {tooltip.employees} employees */}
 
+            {tooltip && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-5 py-3 rounded-xl text-sm shadow-2xl"
+              >
+                <p className="text-blue-400 text-xs uppercase mb-1">
+                  {tooltip.region}
+                </p>
+                <p className="font-semibold">{tooltip.country}</p>
+                <p className="text-gray-400 text-xs mt-1">📦 {tooltip.type}</p>
+              </motion.div>
+            )}
             {/* LEGEND */}
             <div className="absolute top-6 right-6 flex flex-col gap-2 text-xs text-gray-500 bg-white/80 backdrop-blur rounded-lg px-3 py-2 shadow">
-              <span className="flex items-center gap-2">
+              {/* <span className="flex items-center gap-2">
                 <span className="inline-block h-3 w-5 rounded bg-[#0A66C2]" />{" "}
                 Key Market
               </span>
               <span className="flex items-center gap-2">
                 <span className="inline-block h-3 w-5 rounded bg-[#E5E7EB]" />{" "}
                 Other
+              </span> */}
+
+              <span className="flex items-center gap-2">
+                <span className="inline-block h-3 w-5 rounded bg-[#0A66C2]" />
+                India
+              </span>
+
+              <span className="flex items-center gap-2">
+                <span className="inline-block h-3 w-5 rounded bg-[#6baed6]" />
+                Asia Countries
+              </span>
+
+              <span className="flex items-center gap-2">
+                <span className="inline-block h-3 w-5 rounded bg-[#2171b5]" />
+                MENA Countries
+              </span>
+
+              <span className="flex items-center gap-2">
+                <span className="inline-block h-3 w-5 rounded bg-[#08306b]" />
+                GCC Countries
               </span>
             </div>
           </motion.div>
@@ -274,7 +373,7 @@ function GlobalPresencePage() {
       </section>
 
       {/* REGIONAL CARDS */}
-      <section className="bg-white py-20">
+      {/* <section className="bg-white py-20">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -359,10 +458,10 @@ function GlobalPresencePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* KEY MARKETS */}
-      <section className="bg-gray-50 py-20">
+      {/* <section className="bg-gray-50 py-20">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -409,7 +508,7 @@ function GlobalPresencePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="bg-gradient-to-r from-[#0A66C2] to-[#0856a8] py-20">
