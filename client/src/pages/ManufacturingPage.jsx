@@ -303,7 +303,7 @@ function ManufacturingPage() {
 
       {/* Facilities Showcase */}
       <section id="facilities" className="py-20 bg-white scroll-mt-24">
-        <div className="container mx-auto px-6">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -379,7 +379,7 @@ function ManufacturingPage() {
 
       {/* Certifications */}
       <section className="py-20 bg-gradient-to-r from-[#0A66C2] to-[#0856a8]">
-        <div className="container mx-auto px-6">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -424,7 +424,7 @@ function ManufacturingPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

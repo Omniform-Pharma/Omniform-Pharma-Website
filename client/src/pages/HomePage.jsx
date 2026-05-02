@@ -180,7 +180,7 @@ function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.25 }}
                 transition={{ delay: 0.5 }}
-                className="absolute -bottom-8 -left-8 rounded-xl bg-white p-6 shadow-2xl"
+                className="absolute -bottom-6 left-4 rounded-xl bg-white p-6 shadow-2xl sm:-bottom-8 sm:-left-8"
               >
                 <div className="text-4xl font-bold text-[#0A66C2]">10+</div>
                 <div className="font-medium text-gray-600">

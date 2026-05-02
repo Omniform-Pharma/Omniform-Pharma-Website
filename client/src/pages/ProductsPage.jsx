@@ -227,7 +227,7 @@ function ProductsPage() {
       </section>
 
       {/* ── CATEGORY PILLS ── */}
-      <section className="sticky top-18 z-40 bg-white py-6 sm:py-8">
+      <section className="sticky top-18 z-40 bg-white py-6 sm:py-8 overflow-hidden">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:overflow-visible sm:px-0">
             <div className="flex flex-nowrap justify-start gap-3 sm:flex-wrap sm:justify-center">

@@ -47,7 +47,7 @@ function ContactPage() {
         description="Contact Omniform Pharma for third-party manufacturing, private labeling, product development, and export solutions."
       />
       <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
-        <div className="container mx-auto px-6">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
