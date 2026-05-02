@@ -16,6 +16,6 @@ export const NAV_LINKS = [
   { path: "/products", label: "Products" },
   { path: "/manufacturing", label: "Manufacturing" },
   { path: "/global-presence", label: "Global" },
-  { path: "/news-events", label: "News" },
+  // { path: "/news-events", label: "News" },
   { path: "/contact", label: "Contact" },
 ];

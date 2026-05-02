@@ -135,7 +135,7 @@ function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="mt-1 shrink-0 text-[#0A66C2]" />
-                <span className="text-sm">Ahmedabad, Gujarat, India</span>
+                <span className="text-sm">912, Satyamev Elite, Nr Satyamev Shivalik Ambli - Bopal, Cross, Road, Ahmedabad, Gujarat 380051, India</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="shrink-0 text-[#0A66C2]" />
