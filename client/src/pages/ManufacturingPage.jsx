@@ -12,42 +12,13 @@ import {
 } from "lucide-react";
 import ImageWithFallback from "../components/common/ImageWithFallback";
 import Seo from "../components/common/Seo";
+import manu1Img from "../assets/photos/manufacturing1.png";
+import manu2Img from "../assets/photos/manufacturing2.png";
 
 // Manufacturing page with process flow and facilities overview.
 function ManufacturingPage() {
   const [activeStep, setActiveStep] = useState(0);
-  // const processSteps = [
-  //   {
-  //     icon: Beaker,
-  //     title: "Research",
-  //     description: "Innovative drug discovery",
-  //     details: "Exploring molecules and therapies",
-  //   },
-  //   {
-  //     icon: Microscope,
-  //     title: "Development",
-  //     description: "Clinical trials & compliance",
-  //     details: "Ensuring safety and efficacy",
-  //   },
-  //   {
-  //     icon: Shield,
-  //     title: "Testing",
-  //     description: "Quality assurance",
-  //     details: "Batch-level testing protocols",
-  //   },
-  //   {
-  //     icon: Factory,
-  //     title: "Production",
-  //     description: "Manufacturing at scale",
-  //     details: "Automated high-quality systems",
-  //   },
-  //   {
-  //     icon: CheckCircle,
-  //     title: "Quality Check",
-  //     description: "Final validation",
-  //     details: "Certified before release",
-  //   },
-  // ];
+
   const processSteps = [
     {
       icon: Beaker,
@@ -81,13 +52,6 @@ function ManufacturingPage() {
     },
   ];
 
-  // const stats = [
-  //   { number: "67", label: "Manufacturing Units" },
-  //   { number: "1.5B+", label: "Units Per Year" },
-  //   { number: "99.9%", label: "Quality Rate" },
-  //   { number: "24/7", label: "Production Support" },
-  // ];
-
   const stats = [
     { number: "10+", label: "Years Experience" },
     { number: "500+", label: "Products Manufactured" },
@@ -98,18 +62,16 @@ function ManufacturingPage() {
   const facilities = [
     {
       name: "Main Manufacturing Hub",
-      location: "New York, USA",
+      location: "Ahmedabad, India",
       capacity: "500M Units/Year",
-      image:
-        "https://images.unsplash.com/photo-1581092335258-34a0f1b4f3b1?auto=format&fit=crop&w=1600&q=80",
+      image: manu1Img,
       certifications: ["FDA", "ISO 9001", "GMP"],
     },
     {
       name: "Asia Facility",
-      location: "Mumbai, India",
+      location: "Ahmedabad, India",
       capacity: "400M Units/Year",
-      image:
-        "https://images.unsplash.com/photo-1581092919535-7146d6b7b1a2?auto=format&fit=crop&w=1600&q=80",
+      image: manu2Img,
       certifications: ["WHO", "ISO", "GMP"],
     },
   ];
@@ -166,7 +128,7 @@ function ManufacturingPage() {
 
             <p className="text-xl leading-relaxed text-gray-600">
               We provide end-to-end third-party pharma contract manufacturing,
-              private labeling, packaging, and export solutions with strict
+              loan licensing, packaging, and export solutions with strict
               quality standards.
             </p>
 
@@ -196,7 +158,7 @@ function ManufacturingPage() {
           >
             <div className="overflow-hidden rounded-2xl shadow-2xl">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1757578097654-fdae0f7cf008?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                src="\src\assets\photos\manufacturing.png"
                 alt="Manufacturing Facility"
                 className="h-[500px] w-full object-cover transition-transform duration-500 hover:scale-105"
               />
@@ -370,7 +332,7 @@ function ManufacturingPage() {
                 whileHover={{ y: -8 }}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group"
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-100 overflow-hidden">
                   <ImageWithFallback
                     src={facility.image}
                     alt={facility.name}
