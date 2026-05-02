@@ -162,7 +162,10 @@ function ContactPage() {
                   Visit Us
                 </h3>
               </div>
-              <p className="text-gray-600">Ahmedabad, Gujarat, India</p>
+              <p className="text-gray-600">
+                912, Satyamev Elite, Nr Satyamev Shivalik Ambli - Bopal, Cross,
+                Road, Ahmedabad, Gujarat 380051, India
+              </p>
             </div>
             <div className="rounded-2xl bg-white p-8 shadow-lg">
               <div className="mb-4 flex items-center gap-3">
@@ -187,7 +190,7 @@ function ContactPage() {
                   Business Hours
                 </h3>
               </div>
-              <p className="text-gray-600">Mon-Sat: 9:00 AM - 6:00 PM IST</p>
+              <p className="text-gray-600">Mon-Fri: 9:00 AM - 6:00 PM IST</p>
             </div>
             <div className="rounded-2xl bg-white p-8 shadow-lg">
               <div className="mb-4 flex items-center gap-3">
@@ -196,7 +199,8 @@ function ContactPage() {
                   Global Offices
                 </h3>
               </div>
-              <p className="text-gray-600">India • MENA • GCC Countries</p>
+              <p className="text-gray-600">India</p>
+              {/* <p className="text-gray-600">India • MENA • GCC Countries</p> */}
             </div>
           </motion.div>
         </div>
