@@ -5,32 +5,6 @@ import Seo from "../components/common/Seo";
 
 // About page sections based on the provided design.
 function AboutPage() {
-  // const values = [
-  //   {
-  //     icon: Lightbulb,
-  //     title: "Innovation",
-  //     description:
-  //       "Pioneering new treatments and therapeutic approaches through continuous research and development.",
-  //   },
-  //   {
-  //     icon: Award,
-  //     title: "Excellence",
-  //     description:
-  //       "Maintaining the highest standards in quality, safety, and efficacy across all our products.",
-  //   },
-  //   {
-  //     icon: Users,
-  //     title: "Patient Focus",
-  //     description:
-  //       "Putting patient needs at the center of everything we do, from research to delivery.",
-  //   },
-  //   {
-  //     icon: Globe,
-  //     title: "Global Impact",
-  //     description:
-  //       "Making life-saving medications accessible to communities worldwide.",
-  //   },
-  // ];
   const values = [
     {
       icon: Lightbulb,
@@ -59,26 +33,26 @@ function AboutPage() {
 
   const team = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "Chief Executive Officer",
-      bio: "Leading Omniform Pharma towards a future where healthcare is accessible to all.",
+      name: "Gaurav Patel",
+      role: "Founder & Managing Director",
+      bio: "Gaurav Patel, an MBA graduate with over 15 years of professional experience, brings extensive expertise in the pharmaceutical and laboratory testing sectors. Driven by a clear vision to bridge critical gaps in global pharmaceutical access, he founded Omniform Pharma with a focus on building a reliable, compliant, and efficient sourcing ecosystem. Having closely observed the challenges faced by healthcare providers and patients, he recognized the need for a trusted partner capable of delivering high-quality medicines from India while adhering to international standards and timelines. Under his leadership, Omniform Pharma is committed to understanding diverse healthcare needs, collaborating across global markets, and ensuring seamless, compliant supply solutions that contribute to improving lives worldwide.",
       image:
         "https://images.unsplash.com/photo-1739298061768-41a8a7d8b38f?auto=format&fit=crop&w=1080&q=80",
     },
-    {
-      name: "Dr. Michael Chen",
-      role: "Chief Scientific Officer",
-      bio: "Innovation in pharmaceutical science is the key to solving tomorrow's health challenges.",
-      image:
-        "https://images.unsplash.com/photo-1742206594477-15139139c0df?auto=format&fit=crop&w=1080&q=80",
-    },
-    {
-      name: "Dr. Emily Rodriguez",
-      role: "Head of R&D",
-      bio: "Our commitment to research excellence drives breakthrough treatments worldwide.",
-      image:
-        "https://images.unsplash.com/photo-1770221797869-81e508282ac4?auto=format&fit=crop&w=1080&q=80",
-    },
+    // {
+    //   name: "Dr. Michael Chen",
+    //   role: "Chief Scientific Officer",
+    //   bio: "Innovation in pharmaceutical science is the key to solving tomorrow's health challenges.",
+    //   image:
+    //     "https://images.unsplash.com/photo-1742206594477-15139139c0df?auto=format&fit=crop&w=1080&q=80",
+    // },
+    // {
+    //   name: "Dr. Emily Rodriguez",
+    //   role: "Head of R&D",
+    //   bio: "Our commitment to research excellence drives breakthrough treatments worldwide.",
+    //   image:
+    //     "https://images.unsplash.com/photo-1770221797869-81e508282ac4?auto=format&fit=crop&w=1080&q=80",
+    // },
   ];
 
   return (
@@ -206,17 +180,24 @@ function AboutPage() {
               </h2>
 
               <p className="text-lg leading-relaxed text-gray-600">
-                Founded in 1970, Omniform Pharma began with a simple yet
-                profound mission: to create medications that truly make a
-                difference in people's lives. What started as a small research
-                facility has grown into a global pharmaceutical leader.
+                Our journey began with a simple vision to make quality
+                pharmaceutical products more accessible, reliable, and efficient
+                for businesses and communities. Omniform Pharma was established
+                with a focus on bridging the gap between pharmaceutical
+                manufacturing and market-ready solutions. From the very
+                beginning, we have worked closely with our clients to understand
+                their needs and deliver products that meet the highest standards
+                of quality, compliance, and consistency.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-600">
-                Today, our portfolio includes over 500 products serving millions
-                of patients across more than 100 countries. Our commitment to
-                innovation, quality, and accessibility remains as strong as it
-                was on day one.
+                Over the years, we have grown into a trusted partner for
+                pharmaceutical companies across India and international markets,
+                offering end-to-end support, from formulation and manufacturing
+                to branded packaging and export. Today, our commitment remains
+                the same: to build long-term partnerships by delivering
+                dependable pharmaceutical solutions with integrity, precision,
+                and care.
               </p>
 
               {/* STATS */}
@@ -246,7 +227,7 @@ function AboutPage() {
               viewport={{ once: false, amount: 0.25 }}
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1576670159805-622729b5b9eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGxhYm9yYXRvcnklMjByZXNlYXJjaHxlbnwxfHx8fDE3NzQ0MTI1MDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="\src\assets\photos\about.png"
                 alt="Pharmaceutical Laboratory"
                 className="h-[500px] w-full rounded-2xl object-cover shadow-xl"
               />
@@ -256,7 +237,7 @@ function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="bg-gray-50 py-20">
+      {/* <section className="bg-gray-50 py-20">
         <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -317,7 +298,7 @@ function AboutPage() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Leadership Team */}
       <section className="bg-white py-20">
@@ -329,20 +310,25 @@ function AboutPage() {
             className="mb-12 text-center"
           >
             <div className="mb-4 inline-block rounded-full bg-[#0A66C2]/10 px-4 py-2">
-              <span className="font-medium text-[#0A66C2]">Leadership</span>
+              <span className="font-medium text-[#0A66C2]">
+                Leadership / Founder
+              </span>
             </div>
 
             <h2 className="mb-4 text-4xl font-bold text-gray-900">
-              Meet Our Executive Team
+              {/* Meet Our Executive Team */}
+              Leadership That Drives Excellence
             </h2>
 
             <p className="mx-auto max-w-2xl text-xl text-gray-600">
-              Led by industry experts committed to advancing pharmaceutical
-              science.
+              {/* Led by industry experts committed to advancing pharmaceutical
+              science. */}
+              Guided by vision, experience, and a commitment to delivering
+              reliable pharmaceutical solutions worldwide.
             </p>
           </motion.div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          {/* <div className="grid gap-8 md:grid-cols-3">
             {team.map((member, index) => (
               <motion.div
                 key={index}
@@ -370,6 +356,39 @@ function AboutPage() {
                 </div>
               </motion.div>
             ))}
+          </div> */}
+          <div className="flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.25 }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-col md:flex-row items-center gap-8 rounded-2xl bg-white shadow-xl p-8 max-w-4xl w-full"
+            >
+              {/* LEFT - IMAGE */}
+              <div className="w-full md:w-1/3">
+                <div className="relative overflow-hidden rounded-xl">
+                  <ImageWithFallback
+                    src={team[0].image}
+                    alt={team[0].name}
+                    className="w-full h-[300px] object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* RIGHT - CONTENT */}
+              <div className="w-full md:w-2/3">
+                <h3 className="text-2xl font-semibold text-gray-900">
+                  {team[0].name}
+                </h3>
+
+                <p className="mb-3 font-medium text-[#0A66C2]">
+                  {team[0].role}
+                </p>
+
+                <p className="text-gray-600 leading-relaxed">{team[0].bio}</p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -378,12 +397,6 @@ function AboutPage() {
       <section className="bg-gradient-to-r from-[#0A66C2] to-[#0856a8] py-16">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {/* [
-              { number: "5000+", label: "Employees Worldwide" },
-              { number: "500+", label: "Products & Solutions" },
-              { number: "100+", label: "Countries Served" },
-              { number: "50+", label: "Years of Excellence" },
-            ] */}
             {[
               { number: "10+", label: "Years Experience" },
               { number: "500+", label: "Products Manufactured" },
