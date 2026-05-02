@@ -11,6 +11,11 @@ import {
 import { Link } from "react-router-dom";
 import ImageWithFallback from "../components/common/ImageWithFallback";
 import Seo from "../components/common/Seo";
+import sachetImg from "../assets/photos/sachets1.png";
+import syrupImg from "../assets/photos/syrup.png";
+import capsuleImg from "../assets/photos/capsule1.png";
+import certImg from "../assets/photos/certification1.png";
+import tebletImg from "../assets/photos/tablet1.png";
 
 // Home page with full section structure from the provided design.
 function HomePage() {
@@ -19,101 +24,31 @@ function HomePage() {
     visible: { opacity: 1, y: 0 },
   };
 
-  // const products = [
-  //   {
-  //     title: "Cardiovascular Solutions",
-  //     description:
-  //       "Advanced treatments for heart health and circulatory system wellness.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1646392206581-2527b1cae5cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaWxscyUyMG1lZGljYXRpb24lMjBwaGFybWFjeXxlbnwxfHx8fDE3NzQzNzMwNTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  //   },
-  //   {
-  //     title: "Oncology Therapeutics",
-  //     description:
-  //       "Innovative cancer treatments backed by cutting-edge research.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1742206594477-15139139c0df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2llbnRpc3QlMjBtaWNyb3Njb3BlJTIwbGFib3JhdG9yeXxlbnwxfHx8fDE3NzQ0OTM3NjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  //   },
-  //   {
-  //     title: "Immunology Products",
-  //     description:
-  //       "Strengthening immune systems with scientifically proven medications.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1770221797869-81e508282ac4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwcmVzZWFyY2glMjB0ZWFtfGVufDF8fHx8MTc3NDQyNjc0Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  //   },
-  //   {
-  //     title: "Neurological Care",
-  //     description:
-  //       "Breakthrough therapies for neurological disorders and brain health.",
-  //     image:
-  //       "https://images.unsplash.com/photo-1758202292826-c40e172eed1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBtZWRpY2FsJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NzQ0MjM5MTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  //   },
-  // ];
   const products = [
     {
       title: "Tablets",
       description:
         "General medicines, antibiotics, pain relief & multivitamins",
-      image:
-        "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1400&q=80",
+      image: tebletImg,
     },
 
     {
       title: "Capsules",
       description: "Softgel, hard gelatin, nutraceuticals & herbal blends",
-      image:
-        "https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=1400&q=80",
+      image: capsuleImg,
     },
     {
       title: "Syrups & Suspensions",
       description: "Pediatric, cough & digestive formulations",
-      image:
-        "https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=1400&q=80",
+      image: syrupImg,
     },
     {
       title: "Sachets",
       description: "ORS, protein powders, probiotics & effervescent sachets",
-      image:
-        "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1400&q=80",
+      image: sachetImg,
     },
   ];
 
-  // const features = [
-  //   {
-  //     icon: Shield,
-  //     title: "Quality Assurance",
-  //     description:
-  //       "Rigorous testing and quality control at every stage of production.",
-  //   },
-  //   {
-  //     icon: Award,
-  //     title: "FDA Approved",
-  //     description: "All our products meet the highest regulatory standards.",
-  //   },
-  //   {
-  //     icon: Microscope,
-  //     title: "Advanced Research",
-  //     description:
-  //       "State-of-the-art R&D facilities driving pharmaceutical innovation.",
-  //   },
-  //   {
-  //     icon: Heart,
-  //     title: "Patient-Centric",
-  //     description:
-  //       "Dedicated to improving patient outcomes and quality of life.",
-  //   },
-  //   {
-  //     icon: Users,
-  //     title: "Expert Team",
-  //     description: "World-class scientists and healthcare professionals.",
-  //   },
-  //   {
-  //     icon: TrendingUp,
-  //     title: "Industry Leader",
-  //     description:
-  //       "Trusted by healthcare providers worldwide for over 50 years.",
-  //   },
-  // ];
   const features = [
     {
       icon: Shield,
@@ -135,9 +70,9 @@ function HomePage() {
     },
     {
       icon: Heart,
-      title: "Private Labeling",
+      title: "Contract & Loan License Manufacturing",
       description:
-        "End-to-end branding and packaging solutions for your pharmaceutical business.",
+        "Third-party and loan license manufacturing to produce and market products under your brand using our certified facilities.",
     },
     {
       icon: Users,
@@ -153,13 +88,6 @@ function HomePage() {
     },
   ];
 
-  // const certifications = [
-  //   "FDA Approved",
-  //   "ISO 9001:2015",
-  //   "GMP Certified",
-  //   "WHO Prequalified",
-  //   "CE Marked",
-  // ];
   const certifications = [
     "WHO-GMP Certified",
     "ISO Certified",
@@ -201,20 +129,16 @@ function HomePage() {
                 className="text-5xl font-bold leading-tight text-gray-900 md:text-6xl"
               >
                 {/* Your Partner in  */}
-                Your Trusted Partner in{" "}
-                <span className="text-[#0A66C2]">
-                  Pharma Contract Manufacturing
-                </span>
+                Your End-to-End{" "}
+                <span className="text-[#0A66C2]">Pharmaceutical Partner</span>
               </motion.h1>
               <motion.p
                 variants={fadeInUp}
                 className="text-xl leading-relaxed text-gray-600"
               >
-                {/* Committed to developing innovative pharmaceutical solutions that
-                improve lives and advance global health. */}
-                Delivering premium third-party contract manufacturing, private
-                labeling, product development, and export solutions across India
-                and global markets.
+                From product development to manufacturing and branded packaging,
+                we help you bring your own pharmaceutical products to market
+                seamlessly.
               </motion.p>
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
                 <Link
@@ -245,7 +169,7 @@ function HomePage() {
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1576670159805-622729b5b9eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMGxhYm9yYXRvcnklMjByZXNlYXJjaHxlbnwxfHx8fDE3NzQ0MTI1MDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="\src\assets\photos\roberto-sorin-RS0-h_pyByk-unsplash.jpg"
                   alt="Pharmaceutical Research"
                   className="h-[360px] w-full object-cover sm:h-[500px] lg:h-[600px]"
                 />
@@ -278,7 +202,7 @@ function HomePage() {
               transition={{ duration: 0.6 }}
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1739298061768-41a8a7d8b38f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwcHJvZmVzc2lvbmFsJTIwaG9zcGl0YWx8ZW58MXx8fHwxNzc0NDgxODg2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="\src\assets\photos\WhatsApp Image 2026-04-12 at 9.02.37 PM (2).jpeg"
                 alt="Healthcare Professional"
                 className="h-[320px] w-full rounded-2xl object-cover shadow-xl sm:h-[420px] lg:h-[500px]"
               />
@@ -298,23 +222,16 @@ function HomePage() {
               </div>
 
               <h2 className="text-4xl font-bold text-gray-900">
-                {/* Transforming Healthcare Through Innovation */}Reliable
-                Pharmaceutical Manufacturing Solutions
+                Reliable Pharmaceutical Manufacturing Solutions
               </h2>
 
               <p className="text-lg leading-relaxed text-gray-600">
-                {/* For over a decade, Omniform Pharma has been at the forefront of
-                pharmaceutical innovation, dedicated to discovering and
-                developing medications that address critical health challenges. */}
                 Omniform Pharma provides premium third-party contract
                 manufacturing services tailored for pharmaceutical marketing
                 companies across India and global customers.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-600">
-                {/* Our mission is to improve patient outcomes through cutting-edge
-                research, rigorous quality standards, and a commitment to making
-                healthcare accessible to all. */}
                 We also offer dossier preparation, registration support, private
                 labeling, and export services with a commitment to quality,
                 safety, and innovation.
@@ -330,7 +247,6 @@ function HomePage() {
                     MENA & GCC{/* MENA & GCC Markets */}
                   </div>
                   <div className="text-gray-600"> Markets Served</div>{" "}
-                  {/*Countries */}
                 </div>
               </div>
 
@@ -498,6 +414,21 @@ function HomePage() {
             ))}
           </div>
         </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.25 }}
+          className="mt-12 flex justify-center"
+        >
+          <div className="w-full max-w-4xl overflow-hidden rounded-2xl shadow-xl bg-white p-4">
+            <ImageWithFallback
+              src={certImg}
+              alt="Certifications"
+              className="w-full h-auto object-contain rounded-lg"
+            />
+          </div>
+        </motion.div>
       </section>
 
       {/* CTA Section */}
