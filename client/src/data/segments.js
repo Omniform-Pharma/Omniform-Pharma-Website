@@ -1,26 +1,26 @@
 // src/data/segments.js
-import artLumImg from "../assets/medicine/Artemether + Lumefantrine.png";
-import chloroquineImg from "../assets/medicine/Chloroquine Phosphate.png";
-import artesunateImg from "../assets/medicine/Artesunate Injection.png";
+import artLumImg from "../assets/medicine/ArtemetherLumefantrine.png";
+import chloroquineImg from "../assets/medicine/ChloroquinePhosphate.png";
+import artesunateImg from "../assets/medicine/ArtesunateInjection.png";
 import mefloquineImg from "../assets/medicine/Mefloquine.png";
 import paracetamolImg from "../assets/medicine/Paracetamol.png";
-import paracetamol1Img from "../assets/medicine/Paracetamol Syrup.png";
-import levocetirizineImg from "../assets/medicine/Levocetirizine + Montelukast.png";
-import amoxicillinImg from "../assets/medicine/Amoxicillin + Clavulanic Acid.png";
+import paracetamol1Img from "../assets/medicine/ParacetamolSyrup.png";
+import levocetirizineImg from "../assets/medicine/LevocetirizineMontelukast.png";
+import amoxicillinImg from "../assets/medicine/AmoxicillinClavulanicAcid.png";
 import azithromycinImg from "../assets/medicine/Azithromycin.png";
 import cefiximeImg from "../assets/medicine/Cefixime.png";
-import cefixime1Img from "../assets/medicine/Cefixime Dry Syrup.png";
-import ceftriaxoneImg from "../assets/medicine/Ceftriaxone Injection.png";
+import cefixime1Img from "../assets/medicine/CefiximeDrySyrup.png";
+import ceftriaxoneImg from "../assets/medicine/CeftriaxoneInjection.png";
 import levofloxacinImg from "../assets/medicine/Levofloxacin.png";
 import ciprofloxacinImg from "../assets/medicine/Ciprofloxacin.png";
 import chlorpheniramineImg from "../assets/medicine/Chlorpheniramine.png";
-import dextromethorphanImg from "../assets/medicine/Dextromethorphan Syrup.png";
+import dextromethorphanImg from "../assets/medicine/DextromethorphanSyrup.png";
 import phenylephrineImg from "../assets/medicine/Phenylephrine.png";
 import pantoprazoleImg from "../assets/medicine/Pantoprazole.png";
 import omeprazoleImg from "../assets/medicine/Omeprazole.png";
 import rabeprazoleImg from "../assets/medicine/Rabeprazole.png";
 import domperidoneImg from "../assets/medicine/Domperidone.png";
-import antacidImg from "../assets/medicine/Antacid Sachets.png";
+import antacidImg from "../assets/medicine/AntacidSachets.png";
 import metforminImg from "../assets/medicine/Metformin.png";
 import amlodipineImg from "../assets/medicine/Amlodipine.png";
 import atorvastatinImg from "../assets/medicine/Atorvastatin.png";
@@ -28,15 +28,15 @@ import losartanImg from "../assets/medicine/Losartan.png";
 import diclofenacImg from "../assets/medicine/Diclofenac.png";
 import aceclofenacImg from "../assets/medicine/Aceclofenac.png";
 import ibuprofenImg from "../assets/medicine/Ibuprofen.png";
-import ketorolacImg from "../assets/medicine/Ketorolac Injection.png";
+import ketorolacImg from "../assets/medicine/KetorolacInjection.png";
 import multivitaminImg from "../assets/medicine/Multivitamin.png";
-import calciumImg from "../assets/medicine/Calcium + D3.png";
-import omegaImg from "../assets/medicine/Omega 3.png";
-import proteinImg from "../assets/medicine/Protein Powder.png";
-import clotrimazoleImg from "../assets/medicine/Clotrimazole Cream.png";
-import mometasoneImg from "../assets/medicine/Mometasone Cream.png";
-import ketoconazoleImg from "../assets/medicine/Ketoconazole Cream.png";
-import vitaminImg from "../assets/medicine/Vitamin B Complex Injection.png";
+import calciumImg from "../assets/medicine/CalciumD3.png";
+import omegaImg from "../assets/medicine/Omega3.png";
+import proteinImg from "../assets/medicine/ProteinPowder.png";
+import clotrimazoleImg from "../assets/medicine/ClotrimazoleCream.png";
+import mometasoneImg from "../assets/medicine/MometasoneCream.png";
+import ketoconazoleImg from "../assets/medicine/KetoconazoleCream.png";
+import vitaminImg from "../assets/medicine/VitaminBComplexInjection.png";
 import primaquineImg from "../assets/medicine/Primaquine.png";
 
 export const SEGMENTS = [
@@ -53,7 +53,6 @@ export const SEGMENTS = [
         compound: "Artemether 20mg + Lumefantrine 120mg",
         description: "Standard combination therapy for malaria management.",
         availableIn: "Tablets, Suspension",
-        image: artLumImg,
         category: "Anti-Malarial",
         image: artLumImg,
       },
