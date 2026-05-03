@@ -34,7 +34,8 @@ app.use(
 );
 
 // Handle preflight OPTIONS requests for all routes
-app.options("*", cors());
+// ✅ Works on Express 5
+app.options(/.*/, cors());
 
 // ── Body parser ───────────────────────────────────────────────────────────
 app.use(express.json({ limit: "1mb" }));
@@ -65,7 +66,8 @@ app.get("/api/health", (req, res) => {
 app.use("/api/contact", contactRoutes);
 
 // Handles unknown API routes with a clear message.
-app.use(/^\/api\/.*/, (req, res) => {
+// ✅ Works on Express 5
+app.use(/^\/api\//, (req, res) => {
   res.status(404).json({
     success: false,
     message: "API route not found.",
