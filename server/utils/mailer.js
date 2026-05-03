@@ -79,7 +79,7 @@ async function sendContactEmail({ name, email, phone, subject, message }) {
     to,
     from,
     replyTo: email,
-    subject: `Website Enquiry${cleanSubject ? ` — ${cleanSubject}` : ""}`,
+    subject: `Website Enquiry${cleanSubject ? ` - ${cleanSubject}` : ""}`,
     text,
     html,
   });
