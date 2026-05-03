@@ -16,6 +16,8 @@ import syrupImg from "../assets/photos/Syrup.png";
 import capsuleImg from "../assets/photos/capsule1.png";
 import certImg from "../assets/photos/certification1.png";
 import tebletImg from "../assets/photos/tablet1.png";
+import heroImg from "../assets/photos/homehero.jpg";
+import factoryImg from "../assets/photos/homefactory.jpeg";
 
 // Home page with full section structure from the provided design.
 function HomePage() {
@@ -169,7 +171,7 @@ function HomePage() {
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <ImageWithFallback
-                  src="\src\assets\photos\roberto-sorin-RS0-h_pyByk-unsplash.jpg"
+                  src={heroImg}
                   alt="Pharmaceutical Research"
                   className="h-[360px] w-full object-cover sm:h-[500px] lg:h-[600px]"
                 />
@@ -202,7 +204,7 @@ function HomePage() {
               transition={{ duration: 0.6 }}
             >
               <ImageWithFallback
-                src="\src\assets\photos\WhatsApp Image 2026-04-12 at 9.02.37 PM (2).jpeg"
+                src={factoryImg}
                 alt="Healthcare Professional"
                 className="h-[320px] w-full rounded-2xl object-cover shadow-xl sm:h-[420px] lg:h-[500px]"
               />

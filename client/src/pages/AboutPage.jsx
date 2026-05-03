@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Target, Eye, Users, Lightbulb, Award, Globe } from "lucide-react";
 import ImageWithFallback from "../components/common/ImageWithFallback";
 import Seo from "../components/common/Seo";
+import aboutImg from "../assets/photos/about.png";
 
 // About page sections based on the provided design.
 function AboutPage() {
@@ -227,7 +228,7 @@ function AboutPage() {
               viewport={{ once: false, amount: 0.25 }}
             >
               <ImageWithFallback
-                src="\src\assets\photos\about.png"
+                src={aboutImg}
                 alt="Pharmaceutical Laboratory"
                 className="h-[500px] w-full rounded-2xl object-cover shadow-xl"
               />
