@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import ImageWithFallback from "../components/common/ImageWithFallback";
 import Seo from "../components/common/Seo";
 import sachetImg from "../assets/photos/sachets1.png";
-import syrupImg from "../assets/photos/syrup.png";
+import syrupImg from "../assets/photos/Syrup.png";
 import capsuleImg from "../assets/photos/capsule1.png";
 import certImg from "../assets/photos/certification1.png";
 import tebletImg from "../assets/photos/tablet1.png";
