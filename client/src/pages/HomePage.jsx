@@ -130,9 +130,10 @@ function HomePage() {
                 variants={fadeInUp}
                 className="text-5xl font-bold leading-tight text-gray-900 md:text-6xl"
               >
-                {/* Your Partner in  */}
-                Your End-to-End{" "}
-                <span className="text-[#0A66C2]">Pharmaceutical Partner</span>
+                Your Trusted Partner in{" "}
+                <span className="text-[#0A66C2]">
+                  Pharmaceutical Manufacturing & Global Supply
+                </span>
               </motion.h1>
               <motion.p
                 variants={fadeInUp}
