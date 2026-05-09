@@ -297,7 +297,7 @@ function ProductsPage() {
               </div>
 
               {/* Segments */}
-              <div className="space-y-16">
+              <div className="space-y-24">
                 {filteredSegments.map((segment) => {
                   const visibleProducts = getVisibleProducts(segment);
                   const showToggle = canExpand(segment);
@@ -311,9 +311,18 @@ function ProductsPage() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.3 }}
+                        className="
+    relative
+    rounded-3xl
+    border border-gray-100
+    bg-gradient-to-b from-white to-gray-50
+    p-6 sm:p-8
+    shadow-sm
+  "
                       >
                         {/* ── Segment header ── */}
                         <div className="mb-8">
+                          <div className="mb-4 h-1 w-20 rounded-full bg-[#0A66C2]" />
                           <h2 className="mb-1 text-2xl font-bold text-gray-900">
                             {segment.name}
                           </h2>

@@ -25,11 +25,7 @@ function Footer() {
               <img
                 src={logoWhite}
                 alt="Omniform Pharma"
-                className="
-      h-10 w-auto
-      sm:h-12
-      object-contain
-    "
+                className="h-10 w-auto sm:h-12 object-contain"
               />
             </div>
             <p className="text-sm leading-relaxed">
