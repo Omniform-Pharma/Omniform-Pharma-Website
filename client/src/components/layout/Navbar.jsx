@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "../../utils/constants";
+import logo from "../../assets/logo/OMNIFORM-PHARMA.png";
 
 // Global website navigation with responsive desktop/mobile behavior.
 function Navbar() {
@@ -25,15 +26,29 @@ function Navbar() {
     >
       {/* ── Main bar ── */}
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-
         {/* Logo — shrinks on very small screens so it never overflows */}
-        <Link to="/" className="flex min-w-0 shrink-0 items-center gap-2">
+        {/* <Link to="/" className="flex min-w-0 shrink-0 items-center gap-2">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#0A66C2] to-[#0856a8] sm:h-10 sm:w-10">
             <span className="text-base font-bold text-white sm:text-xl">OfP</span>
           </div>
           <span className="truncate text-lg font-bold text-gray-900 sm:text-2xl">
             OmniformPharma
           </span>
+        </Link> */}
+        {/* Logo */}
+
+        <Link to="/" className="flex min-w-0 shrink-0 items-center gap-2">
+          <img
+            src={logo}
+            alt="Omniform Pharma Logo"
+            className="
+      h-8 w-auto
+      sm:h-10
+      md:h-12
+      object-contain
+      shrink-0
+    "
+          />
         </Link>
 
         {/* Desktop nav — hidden below md */}
@@ -57,7 +72,11 @@ function Navbar() {
                     <motion.span
                       layoutId="active-nav-link"
                       className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#0A66C2]"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
                     />
                   )}
                 </>
