@@ -366,7 +366,7 @@ function ProductsPage() {
                               onClick={() => setSelectedProduct(product)}
                             >
                               {/* Image */}
-                              <div className="relative h-72 overflow-hidden">
+                              <div className="relative h-64 overflow-hidden">
                                 <ImageWithFallback
                                   src={product.image ?? FALLBACK_IMAGE}
                                   alt={product.name}
