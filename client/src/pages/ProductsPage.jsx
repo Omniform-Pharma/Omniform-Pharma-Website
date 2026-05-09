@@ -366,13 +366,42 @@ function ProductsPage() {
                               onClick={() => setSelectedProduct(product)}
                             >
                               {/* Image */}
-                              <div className="relative h-64 overflow-hidden">
+                              {/* <div className="relative h-50 sm:h-66 md:h-66 lg:h-66 overflow-hidden">
                                 <ImageWithFallback
                                   src={product.image ?? FALLBACK_IMAGE}
                                   alt={product.name}
                                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" /> */}
+
+                              {/* Image */}
+                              <div
+                                className="
+    relative
+    overflow-hidden
+    aspect-[4/3]
+    sm:aspect-[4/3]
+    lg:aspect-[4/3]
+  "
+                              >
+                                <ImageWithFallback
+                                  src={product.image ?? FALLBACK_IMAGE}
+                                  alt={product.name}
+                                  className="
+      h-full
+      w-full
+      object-cover
+      transition-transform
+      duration-500
+      group-hover:scale-110
+    "
+                                />
+
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+
+                                <div className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-sm font-medium text-[#0A66C2] backdrop-blur">
+                                  {product.category}
+                                </div>
 
                                 {/* Category badge */}
                                 <div className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-sm font-medium text-[#0A66C2] backdrop-blur">
